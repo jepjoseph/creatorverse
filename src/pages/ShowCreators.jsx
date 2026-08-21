@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { supabase } from "../client";
 import CreatorCard from "../components/CreatorCard";
 
+import "../css/ShowCreators.css";
+
 function ShowCreators() {
   const [creators, setCreators] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,8 +23,10 @@ function ShowCreators() {
 
       if (error) {
         console.error("Error fetching creators:", error);
+
         setError(error.message);
         setLoading(false);
+
         return;
       }
 
@@ -54,11 +58,17 @@ function ShowCreators() {
 
   return (
     <main>
-      <h1>Creatorverse</h1>
+      <div className="creator-page-header">
+        <div>
+          <h1>Creatorverse</h1>
 
-      <p>Discover creators worth following.</p>
+          <p>Discover creators worth following.</p>
+        </div>
 
-      <Link to="/new">Add Creator</Link>
+        <Link to="/new" className="add-creator-button">
+          Add Creator
+        </Link>
+      </div>
 
       {creators.length === 0 ? (
         <p>No creators have been added yet.</p>

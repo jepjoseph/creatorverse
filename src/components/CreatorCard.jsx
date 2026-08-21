@@ -1,27 +1,40 @@
-import { Link } from "react-router-dom";
-import '../css/CreatorCard.css'
+import { Link, useNavigate } from "react-router-dom";
+import "../css/CreatorCard.css";
 
 function CreatorCard({ creator }) {
+    const navigate = useNavigate();
   return (
-    <article className="creator-card">
-      {creator.imageURL && <img src={creator.imageURL} alt={creator.name} />}
+    <div
+      className="creator-card"
+      onClick={() => navigate(`/creator/${creator.id}`)}
+    >
+      {creator.imageURL && (
+        <img
+          src={creator.imageURL}
+          alt={creator.name}
+          className="creator-card-image"
+        />
+      )}
 
       <div className="creator-card-content">
         <h2>{creator.name}</h2>
 
         <p>{creator.description}</p>
 
-        <div className="creator-card-actions">
-          <a href={creator.url} target="_blank" rel="noopener noreferrer">
-            Visit Channel
-          </a>
+        <a
+          href={creator.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="creator-link"
+        >
+          Visit Channel
+        </a>
 
-          <Link to={`/creator/${creator.id}`}>View Details</Link>
-
-          <Link to={`/creator/${creator.id}/edit`}>Edit</Link>
-        </div>
+        <Link to={`/creator/${creator.id}`} className="creator-details-button">
+          View Details
+        </Link>
       </div>
-    </article>
+    </div>
   );
 }
 

@@ -1,0 +1,222 @@
+/* =========================================
+   Add Creator Page
+   ========================================= */
+
+.add-creator-page {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fb 0%, #eef2f7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Form Container
+   ========================================= */
+
+.add-creator-container {
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  padding: 42px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+
+.add-creator-header {
+  margin-bottom: 32px;
+}
+
+.add-creator-header h1 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.add-creator-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Form
+   ========================================= */
+
+.add-creator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #374151;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.form-group label span {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* =========================================
+   Inputs
+   ========================================= */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: inherit;
+  font-size: 0.96rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-group input {
+  height: 48px;
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================
+   URL Fields
+   ========================================= */
+
+.form-group input[type="url"] {
+  font-family: inherit;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form-actions button {
+  flex: 1;
+  height: 48px;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Add Creator */
+
+.add-creator-button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+.add-creator-button:hover {
+  background: #1d4ed8;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+.add-creator-button:active {
+  transform: translateY(0);
+}
+
+/* Cancel */
+
+.cancel-button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+
+.cancel-button:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+.cancel-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+@media (max-width: 600px) {
+  .add-creator-page {
+    padding: 30px 15px;
+  }
+
+  .add-creator-container {
+    padding: 28px 22px;
+    border-radius: 14px;
+  }
+
+  .add-creator-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
