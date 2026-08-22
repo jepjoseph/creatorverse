@@ -36,11 +36,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="./src/assets/Demo.gif" title="Video Walkthrough" width="" alt="Video Walkthrough" />
+
+<img src='https://imgur.com/a/BzpwLga' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ... 👉🏿 GIF tool here
+GIF created with N-Studio
 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
@@ -53,7 +55,7 @@ Describe any challenges encountered while building the app or any additional con
 
 ## License
 
-Copyright 2026 [Jean Pierre Joseph
+Copyright 2026 Jean Pierre Joseph
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
