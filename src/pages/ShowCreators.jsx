@@ -23,10 +23,8 @@ function ShowCreators() {
 
       if (error) {
         console.error("Error fetching creators:", error);
-
         setError(error.message);
         setLoading(false);
-
         return;
       }
 
@@ -39,46 +37,76 @@ function ShowCreators() {
 
   if (loading) {
     return (
-      <main>
-        <h1>Creatorverse</h1>
-        <p>Loading creators...</p>
+      <main className="show-creators-page">
+        <div className="page-container">
+          <div className="loading-state">
+            <div className="loading-spinner"></div>
+            <p>Loading creators...</p>
+          </div>
+        </div>
       </main>
     );
   }
 
   if (error) {
     return (
-      <main>
-        <h1>Creatorverse</h1>
-        <p>Unable to load creators.</p>
-        <p>{error}</p>
+      <main className="show-creators-page">
+        <div className="page-container">
+          <div className="error-state">
+            <h1>Unable to load creators</h1>
+            <p>{error}</p>
+            <button onClick={() => window.location.reload()}>Try Again</button>
+          </div>
+        </div>
       </main>
     );
   }
 
   return (
-    <main>
-      <div className="creator-page-header">
-        <div>
-          <h1>Creatorverse</h1>
+    <main className="show-creators-page">
+      <div className="page-container">
+        <header className="creator-page-header">
+          <div>
+            <span className="page-eyebrow">CREATORVERSE</span>
 
-          <p>Discover creators worth following.</p>
-        </div>
+            <h1>Discover Great Creators</h1>
 
-        <Link to="/new" className="add-creator-button">
-          Add Creator
-        </Link>
+            <p>
+              Explore creators worth following and discover new voices, ideas,
+              and inspiration.
+            </p>
+          </div>
+
+          <Link to="/new" className="add-creator-button">
+            + Add Creator
+          </Link>
+        </header>
+
+        {creators.length === 0 ? (
+          <div className="empty-state">
+            <h2>No creators yet</h2>
+            <p>
+              Start building your Creatorverse by adding your first creator.
+            </p>
+
+            <Link to="/new" className="add-creator-button">
+              Add Your First Creator
+            </Link>
+          </div>
+        ) : (
+          <>
+            <div className="creator-count">
+              {creators.length} {creators.length === 1 ? "creator" : "creators"}
+            </div>
+
+            <section className="creator-grid">
+              {creators.map((creator) => (
+                <CreatorCard key={creator.id} creator={creator} />
+              ))}
+            </section>
+          </>
+        )}
       </div>
-
-      {creators.length === 0 ? (
-        <p>No creators have been added yet.</p>
-      ) : (
-        <section className="creator-grid">
-          {creators.map((creator) => (
-            <CreatorCard key={creator.id} creator={creator} />
-          ))}
-        </section>
-      )}
     </main>
   );
 }

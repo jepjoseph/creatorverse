@@ -1,0 +1,286 @@
+.edit-creator-page {
+  min-height: 100vh;
+  padding: 60px 20px 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.edit-creator-container {
+  width: 100%;
+  max-width: 680px;
+
+  padding: 42px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow-md);
+}
+
+.edit-creator-header {
+  margin-bottom: 32px;
+}
+
+.edit-creator-header h1 {
+  margin-bottom: 10px;
+
+  color: var(--text);
+  font-size: 2.1rem;
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.edit-creator-header p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.edit-creator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.edit-creator-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-creator-form .form-group label {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.edit-creator-form .form-group label span {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.edit-creator-form input,
+.edit-creator-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  background: var(--bg-secondary);
+  color: var(--text);
+
+  padding: 13px 15px;
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.edit-creator-form input {
+  height: 48px;
+}
+
+.edit-creator-form textarea {
+  min-height: 135px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.edit-creator-form input:focus,
+.edit-creator-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form-actions button {
+  flex: 1;
+
+  height: 48px;
+  padding: 0 20px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 0.95rem;
+  font-weight: 650;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.update-creator-button {
+  border: none;
+  background: var(--accent);
+  color: white;
+}
+
+.update-creator-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.cancel-button:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.edit-loading {
+  margin: 0;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.edit-error {
+  color: var(--danger-hover);
+}
+
+.edit-error-message {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+
+  background: var(--danger-soft);
+  color: var(--danger-hover);
+
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .edit-creator-page {
+    padding: 30px 15px 50px;
+  }
+
+  .edit-creator-container {
+    padding: 28px 22px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   Delete Section
+   ========================================= */
+
+.delete-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.delete-section-content {
+  flex: 1;
+}
+
+.delete-section-content h2 {
+  margin: 0 0 8px;
+  color: #991b1b;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.delete-section-content p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.delete-creator-button {
+  flex-shrink: 0;
+
+  min-height: 44px;
+  padding: 0 18px;
+
+  border: 1px solid #dc2626;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #dc2626;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.delete-creator-button:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.delete-creator-button:active {
+  transform: translateY(0);
+}
+
+.delete-creator-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================
+   Disabled Buttons
+   ========================================= */
+
+.update-creator-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================
+   Responsive Delete Section
+   ========================================= */
+
+@media (max-width: 600px) {
+  .delete-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .delete-creator-button {
+    width: 100%;
+  }
+}

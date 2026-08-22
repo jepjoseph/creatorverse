@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { supabase } from "../client";
 
-import "../css//ViewCreator.css";
+import "../css/ViewCreator.css";
 
 function ViewCreator() {
   const { id } = useParams();
@@ -93,8 +93,6 @@ function ViewCreator() {
 
           <div className="creator-details-actions">
             <Link to={`/creator/${creator.id}/edit`}>Edit Creator</Link>
-
-            <Link to="/">Back to Creatorverse</Link>
           </div>
         </div>
       </article>
